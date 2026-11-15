@@ -23,6 +23,9 @@ Already have your own project? You can do the same exercises in your own repo in
    npm ci
    ```
 
+   `npm ci` also gives your copy its own app name, slug and app IDs in `app.json`, based on
+   your repo name (see [Using this as your project](#using-this-as-your-project)). Commit that change.
+
 4. Check that everything works locally:
 
    ```bash
@@ -59,6 +62,24 @@ Already have your own project? You can do the same exercises in your own repo in
    `dist/`) to Vercel from a workflow and post the link as a comment on the PR.
    You need a free Vercel account and the secrets `VERCEL_TOKEN`, `VERCEL_ORG_ID` and
    `VERCEL_PROJECT_ID` (**Settings > Secrets and variables > Actions**). Never put tokens in the code.
+
+## Using this as your project
+
+You can keep building your own app on top of this starter. Every copy of the template starts
+with the same `app.json`, so the first `npm ci` on your laptop runs `scripts/setup-app.mjs`
+once. It sets values that are unique to your repo, for example for `github.com/jan/hike-app`:
+
+| Field in `app.json` | Value |
+|---|---|
+| `name` | `Hike App` |
+| `slug` | `hike-app` (the project name on expo.dev) |
+| `android.package` | `io.github.jan.hike_app` |
+| `ios.bundleIdentifier` | `io.github.jan.hike-app` |
+
+That way `eas init` creates **your own** project on expo.dev, and your builds don't clash with
+anyone else's. Check `app.json` before your first `eas init`: if the slug is still `cicd-starter`,
+run `npm run setup-app` (or `npm run setup-app -- my-app-name` to pick a name yourself).
+Want other values? Change them now. After your first `eas build` the IDs are tied to your builds.
 
 Stuck? The finished versions of every step are in the lecture demo repo:
 <https://github.com/ahrnuld/cicd-demo> (branches `step-1-ci` … `step-4-preview`).

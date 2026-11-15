@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "CI/CD Demo",
-    "slug": "cicd-demo",
+    "name": "CI/CD Starter",
+    "slug": "cicd-starter",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "dev.lecture.cicddemo"
+      "bundleIdentifier": "dev.lecture.cicdstarter"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +18,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "dev.lecture.cicddemo"
+      "package": "dev.lecture.cicdstarter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
